@@ -1,14 +1,21 @@
+/*
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:13:48
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/stores/modules/tabs.ts
+ */
 import router from "@/routers";
 import { defineStore } from "pinia";
 import { getUrlWithParams } from "@/utils";
 import { useKeepAliveStore } from "./keepAlive";
-import { TabsState, TabsMenuProps } from "@/stores/interface";
+import type { TabsState, TabsMenuProps } from "@/stores/interface";
 import piniaPersistConfig from "@/stores/helper/persist";
 
 const keepAliveStore = useKeepAliveStore();
 
-export const useTabsStore = defineStore({
-  id: "geeker-tabs",
+export const useTabsStore = defineStore("zero-tabs",{
   state: (): TabsState => ({
     tabsMenuList: []
   }),
@@ -72,5 +79,5 @@ export const useTabsStore = defineStore({
       });
     }
   },
-  persist: piniaPersistConfig("geeker-tabs")
+  persist: piniaPersistConfig("zero-tabs")
 });

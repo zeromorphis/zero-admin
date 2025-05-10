@@ -1,0 +1,12 @@
+// reset style sheet
+@use "@/styles/reset.scss" as *;
+// CSS common style sheet
+@use "@/styles/common.scss" as *;
+// iconfont css
+@use "@/assets/iconfont/iconfont.scss" as *;
+// font css
+@use "@/assets/fonts/font.scss" as *;
+// custom element dark css
+@use "@/styles/element-dark.scss" as *;
+// custom element css
+@use "@/styles/element.scss" as *;

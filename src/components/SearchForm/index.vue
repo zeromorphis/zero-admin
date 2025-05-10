@@ -1,3 +1,11 @@
+<!--
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:12:12
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/components/SearchForm/index.vue
+-->
 <template>
   <div v-if="columns.length" class="card table-search">
     <el-form ref="formRef" :model="searchParam">
@@ -34,8 +42,8 @@
 </template>
 <script setup lang="ts" name="SearchForm">
 import { computed, ref } from "vue";
-import { ColumnProps } from "@/components/ProTable/interface";
-import { BreakPoint } from "@/components/Grid/interface";
+import type { ColumnProps } from "@/components/ProTable/interface";
+import type { BreakPoint } from "@/components/Grid/interface";
 import { Delete, Search, ArrowDown, ArrowUp } from "@element-plus/icons-vue";
 import SearchFormItem from "./components/SearchFormItem.vue";
 import Grid from "@/components/Grid/index.vue";

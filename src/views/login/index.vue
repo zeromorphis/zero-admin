@@ -1,3 +1,11 @@
+<!--
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:45
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 17:05:39
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/views/login/index.vue
+-->
 <template>
   <div class="login-container flx-center">
     <div class="login-box">
@@ -8,7 +16,7 @@
       <div class="login-form">
         <div class="login-logo">
           <img class="login-icon" src="@/assets/images/logo.svg" alt="" />
-          <h2 class="logo-text">Geeker-Admin</h2>
+          <h2 class="logo-text">Zero-Admin</h2>
         </div>
         <LoginForm />
       </div>
@@ -22,5 +30,5 @@ import SwitchDark from "@/components/SwitchDark/index.vue";
 </script>
 
 <style scoped lang="scss">
-@import "./index.scss";
+@use "./index.scss";
 </style>

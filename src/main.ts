@@ -1,45 +1,39 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-// reset style sheet
-import "@/styles/reset.scss";
-// CSS common style sheet
-import "@/styles/common.scss";
-// iconfont css
-import "@/assets/iconfont/iconfont.scss";
-// font css
-import "@/assets/fonts/font.scss";
-// element css
-import "element-plus/dist/index.css";
-// element dark css
-import "element-plus/theme-chalk/dark/css-vars.css";
-// custom element dark css
-import "@/styles/element-dark.scss";
-// custom element css
-import "@/styles/element.scss";
-// svg icons
-import "virtual:svg-icons-register";
-// element plus
-import ElementPlus from "element-plus";
-// element icons
-import * as Icons from "@element-plus/icons-vue";
-// custom directives
-import directives from "@/directives/index";
-// vue Router
-import router from "@/routers";
-// vue i18n
-import I18n from "@/languages/index";
-// pinia store
-import pinia from "@/stores";
-// errorHandler
+
+import "@/styles/index.scss"; // 所有样式统一注入
+import "virtual:svg-icons-register"; // svg icons
+
+import router, { setupRouter } from "@/routers";
+import { setupStore } from "@/stores";
+import { setupI18n } from "@/languages";
+import { registerDirectives } from "@/directives";
+import { registerGlobElementPlusComp } from "@/plugins/elementPlus";
 import errorHandler from "@/utils/errorHandler";
 
-const app = createApp(App);
+async function bootstrap() {
+  const app = createApp(App);
 
-app.config.errorHandler = errorHandler;
+  // 错误处理
+  app.config.errorHandler = errorHandler;
 
-// register the element Icons component
-Object.keys(Icons).forEach(key => {
-  app.component(key, Icons[key as keyof typeof Icons]);
-});
+  // 注册全局指令
+  registerDirectives(app);
 
-app.use(ElementPlus).use(directives).use(router).use(I18n).use(pinia).mount("#app");
+  // 配置Pinia
+  setupStore(app);
+
+  // 配置i18n
+  setupI18n(app);
+
+  // 配置路由
+  setupRouter(app);
+
+  // 注册全局ElementPlus组件
+  registerGlobElementPlusComp(app);
+
+  // 路由准备完毕再挂载
+  await router.isReady().then(() => app.mount("#app"));
+}
+
+void bootstrap();

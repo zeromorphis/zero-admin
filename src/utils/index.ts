@@ -1,5 +1,5 @@
 import { isArray } from "@/utils/is";
-import { FieldNamesProps } from "@/components/ProTable/interface";
+import type { FieldNamesProps } from "@/components/ProTable/interface";
 
 const mode = import.meta.env.VITE_ROUTER_MODE;
 

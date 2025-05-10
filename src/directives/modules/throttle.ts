@@ -1,4 +1,12 @@
 /*
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 14:51:49
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/directives/modules/throttle.ts
+ */
+/*
   需求：防止按钮在短时间内被多次点击，使用节流函数限制规定时间内只能点击一次。
 
   思路：
@@ -35,7 +43,7 @@ const throttle: Directive = {
   },
   beforeUnmount(el: ElType) {
     el.removeEventListener("click", el.__handleClick__);
-  }
+  },
 };
 
 export default throttle;

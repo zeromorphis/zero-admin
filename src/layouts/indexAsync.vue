@@ -1,3 +1,11 @@
+<!--
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:13:00
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/layouts/indexAsync.vue
+-->
 <!-- 💥 这里是异步加载 LayoutComponents -->
 <template>
   <el-watermark id="watermark" :font="font" :content="watermark ? ['Geeker Admin', 'Happy Working'] : ''">
@@ -15,7 +23,7 @@
 
 <script setup lang="ts" name="layoutAsync">
 import { computed, defineAsyncComponent, reactive, watch, type Component } from "vue";
-import { LayoutType } from "@/stores/interface";
+import type { LayoutType } from "@/stores/interface";
 import { useGlobalStore } from "@/stores/modules/global";
 import Loading from "@/components/Loading/index.vue";
 import ThemeDrawer from "./components/ThemeDrawer/index.vue";

@@ -1,3 +1,11 @@
+/*
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 14:47:50
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/utils/errorHandler.ts
+ */
 import { ElNotification } from "element-plus";
 
 /**
@@ -13,14 +21,14 @@ const errorHandler = (error: any) => {
     RangeError: "使用内置对象时，参数超范围",
     SyntaxError: "语法错误",
     EvalError: "错误的使用了Eval",
-    URIError: "URI错误"
+    URIError: "URI错误",
   };
   let errorName = errorMap[error.name] || "未知错误";
   ElNotification({
     title: errorName,
     message: error,
     type: "error",
-    duration: 3000
+    duration: 3000,
   });
 };
 

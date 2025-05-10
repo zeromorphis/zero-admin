@@ -1,4 +1,12 @@
-import { Theme } from "@/hooks/interface";
+/*
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:14:14
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/styles/theme/header.ts
+ */
+import type { Theme } from "@/hooks/interface";
 
 export const headerTheme: Record<Theme.ThemeType, { [key: string]: string }> = {
   light: {

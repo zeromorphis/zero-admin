@@ -1,4 +1,12 @@
-import { ResPage, User } from "@/api/interface/index";
+/*
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:10:17
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/api/modules/user.ts
+ */
+import type { ResPage, User } from "@/api/interface/index";
 import { PORT1 } from "@/api/config/servicePort";
 import http from "@/api";
 

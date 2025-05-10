@@ -1,3 +1,11 @@
+/*
+ * @Author: YT
+ * @Date: 2025-05-10 12:44:56
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 12:53:05
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/vite.config.ts
+ */
 import { defineConfig, loadEnv, ConfigEnv, UserConfig } from "vite";
 import { resolve } from "path";
 import { wrapperEnv } from "./build/getEnv";
@@ -33,7 +41,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@import "@/styles/var.scss";`
+          additionalData: `@use "@/styles/var.scss" as *;`
         }
       }
     },
@@ -47,7 +55,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
     },
     plugins: createVitePlugins(viteEnv),
     esbuild: {
-      pure: viteEnv.VITE_DROP_CONSOLE ? ["console.log", "debugger"] : []
+      // pure: viteEnv.VITE_DROP_CONSOLE ? ["console.log", "debugger"] : []
+      pure: viteEnv.VITE_DROP_CONSOLE ? ["console.log"] : []
     },
     build: {
       outDir: "dist",

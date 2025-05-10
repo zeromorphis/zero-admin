@@ -1,10 +1,18 @@
+<!--
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:11:19
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/components/ProTable/components/TableColumn.vue
+-->
 <template>
   <RenderTableColumn v-bind="column" />
 </template>
 
 <script setup lang="tsx" name="TableColumn">
 import { inject, ref, useSlots } from "vue";
-import { ColumnProps, RenderScope, HeaderRenderScope } from "@/components/ProTable/interface";
+import type { ColumnProps, RenderScope, HeaderRenderScope } from "@/components/ProTable/interface";
 import { filterEnum, formatValue, handleProp, handleRowAccordingToProp } from "@/utils";
 
 defineProps<{ column: ColumnProps }>();
@@ -28,14 +36,10 @@ const getTagType = (item: ColumnProps, scope: RenderScope<any>) => {
 };
 
 const RenderTableColumn = (item: ColumnProps) => {
+  if (!item.isShow) return null; // ✅ 提前判断
   return (
     <>
-      {item.isShow && (
-        <el-table-column
-          {...item}
-          align={item.align ?? "center"}
-          showOverflowTooltip={item.showOverflowTooltip ?? item.prop !== "operation"}
-        >
+      {item.isShow && (<el-table-column {...item} align={item.align ?? "center"} showOverflowTooltip={item.showOverflowTooltip ?? item.prop !== "operation"}>
           {{
             default: (scope: RenderScope<any>) => {
               if (item._children) return item._children.map(child => RenderTableColumn(child));

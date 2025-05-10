@@ -1,3 +1,11 @@
+<!--
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:10:44
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/components/Grid/components/GridItem.vue
+-->
 <template>
   <div v-show="isShow" :style="style">
     <slot></slot>
@@ -5,7 +13,7 @@
 </template>
 <script setup lang="ts" name="GridItem">
 import { computed, inject, Ref, ref, useAttrs, watch } from "vue";
-import { BreakPoint, Responsive } from "../interface/index";
+import type { BreakPoint, Responsive } from "../interface/index";
 
 type Props = {
   offset?: number;

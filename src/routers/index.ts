@@ -1,3 +1,4 @@
+import type { App } from "vue";
 import { createRouter, createWebHashHistory, createWebHistory } from "vue-router";
 import { useUserStore } from "@/stores/modules/user";
 import { useAuthStore } from "@/stores/modules/auth";
@@ -101,5 +102,10 @@ router.onError(error => {
 router.afterEach(() => {
   NProgress.done();
 });
+
+// 配置路由
+export function setupRouter(app: App<Element>) {
+  app.use(router);
+}
 
 export default router;

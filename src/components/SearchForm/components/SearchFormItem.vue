@@ -1,3 +1,11 @@
+<!--
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:12:30
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/components/SearchForm/components/SearchFormItem.vue
+-->
 <template>
   <component
     :is="column.search?.render ?? `el-${column.search?.el}`"
@@ -25,7 +33,7 @@
 <script setup lang="ts" name="SearchFormItem">
 import { computed, inject, ref } from "vue";
 import { handleProp } from "@/utils";
-import { ColumnProps } from "@/components/ProTable/interface";
+import type { ColumnProps } from "@/components/ProTable/interface";
 
 interface SearchFormItem {
   column: ColumnProps;

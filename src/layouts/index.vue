@@ -1,3 +1,11 @@
+<!--
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:12:54
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/layouts/index.vue
+-->
 <!-- 💥 这里是一次性加载 LayoutComponents -->
 <template>
   <el-watermark id="watermark" :font="font" :content="watermark ? ['Geeker Admin', 'Happy Working'] : ''">
@@ -8,7 +16,7 @@
 
 <script setup lang="ts" name="layout">
 import { computed, reactive, watch, type Component } from "vue";
-import { LayoutType } from "@/stores/interface";
+import type { LayoutType } from "@/stores/interface";
 import { useGlobalStore } from "@/stores/modules/global";
 import ThemeDrawer from "./components/ThemeDrawer/index.vue";
 import LayoutVertical from "./LayoutVertical/index.vue";

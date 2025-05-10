@@ -1,0 +1,6 @@
+@use "@/styles/reset.scss" as *;
+@use "@/styles/common.scss" as *;
+@use "@/assets/iconfont/iconfont.scss" as *;
+@use "@/assets/fonts/font.scss" as *;
+@use "@/styles/element-dark.scss" as *;
+@use "@/styles/element.scss" as *;

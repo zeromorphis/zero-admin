@@ -1,3 +1,11 @@
+<!--
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:13:10
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/layouts/components/Header/components/Language.vue
+-->
 <template>
   <el-dropdown trigger="click" @command="changeLanguage">
     <i :class="'iconfont icon-zhongyingwen'" class="toolBar-icon"></i>
@@ -20,7 +28,7 @@
 import { useI18n } from "vue-i18n";
 import { computed } from "vue";
 import { useGlobalStore } from "@/stores/modules/global";
-import { LanguageType } from "@/stores/interface";
+import type { LanguageType } from "@/stores/interface";
 
 const i18n = useI18n();
 const globalStore = useGlobalStore();

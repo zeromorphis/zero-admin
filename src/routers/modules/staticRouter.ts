@@ -1,4 +1,12 @@
-import { RouteRecordRaw } from "vue-router";
+/*
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:27:27
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/routers/modules/staticRouter.ts
+ */
+import type { RouteRecordRaw } from "vue-router";
 import { HOME_URL, LOGIN_URL } from "@/config";
 
 /**

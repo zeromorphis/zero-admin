@@ -1,3 +1,11 @@
+<!--
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:45
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:16:00
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/views/system/menuMange/index.vue
+-->
 <template>
   <div class="table-box">
     <ProTable ref="proTable" title="菜单列表" row-key="path" :indent="20" :columns="columns" :data="menuData">
@@ -22,7 +30,7 @@
 
 <script setup lang="ts" name="menuMange">
 import { ref } from "vue";
-import { ColumnProps } from "@/components/ProTable/interface";
+import type { ColumnProps } from "@/components/ProTable/interface";
 import { Delete, EditPen, CirclePlus } from "@element-plus/icons-vue";
 import authMenuList from "@/assets/json/authMenuList.json";
 import ProTable from "@/components/ProTable/index.vue";

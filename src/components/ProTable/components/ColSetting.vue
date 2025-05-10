@@ -1,3 +1,11 @@
+<!--
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:11:11
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/components/ProTable/components/ColSetting.vue
+-->
 <template>
   <!-- 列设置 -->
   <el-drawer v-model="drawerVisible" title="列设置" size="450px">
@@ -23,7 +31,7 @@
 
 <script setup lang="ts" name="ColSetting">
 import { ref } from "vue";
-import { ColumnProps } from "@/components/ProTable/interface";
+import type { ColumnProps } from "@/components/ProTable/interface";
 
 defineProps<{ colSetting: ColumnProps[] }>();
 

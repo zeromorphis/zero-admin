@@ -1,3 +1,11 @@
+/*
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 14:52:17
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/directives/modules/longpress.ts
+ */
 /**
  * v-longpress
  * 长按指令，长按时触发事件
@@ -43,7 +51,7 @@ const directive: Directive = {
     el.addEventListener("mouseout", cancel);
     el.addEventListener("touchend", cancel);
     el.addEventListener("touchcancel", cancel);
-  }
+  },
 };
 
 export default directive;

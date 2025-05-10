@@ -1,6 +1,14 @@
-import { VNode, ComponentPublicInstance, Ref } from "vue";
-import { BreakPoint, Responsive } from "@/components/Grid/interface";
-import { TableColumnCtx } from "element-plus/es/components/table/src/table-column/defaults";
+/*
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:11:37
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/components/ProTable/interface/index.ts
+ */
+import type { VNode, ComponentPublicInstance, Ref } from "vue";
+import type { BreakPoint, Responsive } from "@/components/Grid/interface";
+import type { TableColumnCtx } from "element-plus/es/components/table/src/table-column/defaults";
 import { ProTableProps } from "@/components/ProTable/index.vue";
 import ProTable from "@/components/ProTable/index.vue";
 

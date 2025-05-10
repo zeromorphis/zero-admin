@@ -1,5 +1,13 @@
+/*
+ * @Author: YT
+ * @Date: 2025-05-10 10:40:44
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-10 16:12:36
+ * @Description: 当时只道是寻常
+ * @FilePath: /dev/my-vue-app/src/hooks/useHandleData.ts
+ */
 import { ElMessageBox, ElMessage } from "element-plus";
-import { HandleData } from "./interface";
+import type { HandleData } from "./interface";
 
 /**
  * @description 操作单条数据信息 (二次确认【删除、禁用、启用、重置密码】)
