@@ -63,6 +63,9 @@ class RequestHttp {
       (response: AxiosResponse & { config: CustomAxiosRequestConfig }) => {
         const { data, config } = response;
 
+        console.log("response", response);
+        console.log("response-data", data);
+
         const userStore = useUserStore();
         axiosCanceler.removePending(config);
         config.loading && tryHideFullScreenLoading();
