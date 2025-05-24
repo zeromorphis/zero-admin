@@ -2,9 +2,9 @@
  * @Author: YT
  * @Date: 2025-05-21 14:51:34
  * @LastEditors: YT
- * @LastEditTime: 2025-05-23 11:06:00
+ * @LastEditTime: 2025-05-24 22:26:07
  * @Description: 当时只道是寻常
- * @FilePath: \start\zero-admin\src\api\modules\login.ts
+ * @FilePath: /dev/zero-admin/src/api/modules/login.ts
  */
 import type { Login } from "@/api/interface/index";
 // import { PORT1 } from "@/api/config/servicePort";
@@ -32,9 +32,9 @@ export const loginApi = (params: Login.ReqLoginForm) => {
 
 // 获取菜单列表
 export const getAuthMenuListApi = () => {
-  // return http.get<Menu.MenuOptions[]>(PORT1 + `/menu/list`, {}, { loading: false });
+  return http.get<Menu.MenuOptions[]>(`/role/permissions/tree`, {}, { loading: false });
   // 如果想让菜单变为本地数据，注释上一行代码，并引入本地 authMenuList.json 数据
-  return authMenuList;
+  // return authMenuList;
 };
 
 // 获取按钮权限

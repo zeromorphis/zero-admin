@@ -39,6 +39,8 @@ export const initDynamicRouter = async () => {
       if (item.component && typeof item.component == "string") {
         item.component = modules["/src/views" + item.component + ".vue"];
       }
+        console.log("动态路由加载组件", item);
+
       if (item.meta.isFull) {
         router.addRoute(item as unknown as RouteRecordRaw);
       } else {
