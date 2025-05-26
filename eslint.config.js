@@ -1,11 +1,31 @@
+/*
+ * @Author: YT
+ * @Date: 2025-05-26 10:14:39
+ * @LastEditors: YT
+ * @LastEditTime: 2025-05-26 10:54:44
+ * @Description: 当时只道是寻常
+ * @FilePath: \start\zero-admin\eslint.config.js
+ */
 import { defineConfig } from "eslint/config";
-import vueEslint from 'eslint-plugin-vue';
+// import vueEslint from 'eslint-plugin-vue';
+import * as vueEslint from 'eslint-plugin-vue'
 import vueParser from 'vue-eslint-parser';
 import tsEslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
+
 const { configs: vueConfigs } = vueEslint;
 
 export default defineConfig([
+  // ✅ 添加这个配置项用于忽略文件（替代 .eslintignore）
+  {
+    ignores: [
+      "node_modules/",
+      "dist/",
+      "**/*.config.js",  // 如果你之前忽略了这些文件
+      "vite.config.*",
+      "eslint.config.js"
+    ],
+  },
   // 全局通用规则
   {
     languageOptions: {
@@ -84,6 +104,14 @@ export default defineConfig([
       "@typescript-eslint/ban-types": "off", // 禁止使用特定类型
       "@typescript-eslint/no-var-requires": "off", // 允许使用 require() 函数导入模块
       "@typescript-eslint/no-non-null-assertion": "off", // 不允许使用后缀运算符的非空断言(!)
+    }
+  },
+  {
+    plugins: {
+      prettier: require("eslint-plugin-prettier")
+    },
+    rules: {
+      "prettier/prettier": "error"
     }
   }
 ]);
