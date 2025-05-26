@@ -2,7 +2,7 @@ import { resolve } from "path";
 import { PluginOption } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 import { createHtmlPlugin } from "vite-plugin-html";
-import { visualizer } from 'vite-plugin-visualizer'
+import { visualizer } from 'rollup-plugin-visualizer';
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
