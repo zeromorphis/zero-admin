@@ -1,5 +1,5 @@
 import { resolve } from "path";
-import { PluginOption } from "vite";
+import type { PluginOption } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
 import { createHtmlPlugin } from "vite-plugin-html";
 import { visualizer } from 'rollup-plugin-visualizer';
@@ -49,7 +49,7 @@ export const createVitePlugins = (viteEnv: ViteEnv): (PluginOption | PluginOptio
     VITE_PWA && createVitePwa(viteEnv),
     // 是否生成包预览，分析依赖包大小做优化处理
     VITE_REPORT && (visualizer({
-      open: true, // 构建后自动打开分析图
+      open: false, // 构建后自动打开分析图
       gzipSize: true,
       brotliSize: true
     }) as PluginOption),

@@ -60,7 +60,7 @@
     "eslint-plugin-vue": "^10.1.0",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
-    "rollup-plugin-visualizer": "^6.0.0",
+    "rollup-plugin-visualizer": "^5.5.1",
     "sass": "^1.89.0",
     "standard-version": "^9.5.0",
     "typescript": "^5.8.3",
